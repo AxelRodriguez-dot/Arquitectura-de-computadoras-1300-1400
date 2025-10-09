@@ -52,15 +52,3 @@ Selecciona el puerto correspondiente.
 Compila y sube el código al Arduino.
 
 Una vez cargado, el LED integrado comenzará a parpadear enviando la señal SOS repetidamente.
-
-Observaciones y mejoras posibles
-
-Puedes usar un LED externo conectado a otro pin (por ejemplo, pin 13) si el LED integrado no es visible.
-
-Se podrían agregar botones para activar/desactivar la señal.
-
-Ajustar unit permite cambiar la velocidad del mensaje.
-
-Usar interrupciones o temporizadores puede hacer la señal más precisa, sin depender de delay().
-
-Combinar con otras salidas (placa sonora, buzzer) para emitir también sonido en código Morse.
