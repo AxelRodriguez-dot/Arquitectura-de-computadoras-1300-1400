@@ -13,9 +13,24 @@ Arduino Leonardo R3
 
 Cable USB para programar y alimentar el Arduino
 
-(Opcional) Protoboard, cables, si deseas extender el circuito a un LED externo
-
 Computadora con el IDE de Arduino instalado
+
+Especificaciones técnicas del Arduino Leonardo R3
+Característica	Descripción
+Microcontrolador	ATmega32u4
+Voltaje de operación	5 V
+Voltaje de entrada recomendado	7 V – 12 V
+Pines digitales I/O	20 (de los cuales 7 pueden ser PWM)
+Entradas analógicas	12
+Corriente máxima por pin I/O	40 mA
+Memoria Flash	32 KB (4 KB usados por el bootloader)
+SRAM	2.5 KB
+EEPROM	1 KB
+Frecuencia de reloj	16 MHz
+Comunicación USB	Nativa (sin chip FTDI, usa el propio ATmega32u4)
+LED integrado	Pin 13
+Conexión USB	Micro-USB
+Características especiales	Puede emular teclado, ratón y otros dispositivos HID
 
 Funcionamiento de la señal SOS (Código Morse)
 
