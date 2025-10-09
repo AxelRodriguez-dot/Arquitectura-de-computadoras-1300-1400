@@ -1,0 +1,66 @@
+Práctica: Señal SOS con LED integrado (Arduino Leonardo R3)
+Descripción
+
+Este proyecto muestra cómo hacer que el LED integrado del Arduino Leonardo R3 emita la señal Morse SOS (… — …) mediante pulsos de luz.
+El video de demostración muestra el funcionamiento:
+Practica SOS - https://youtu.be/3ekV9Hd9AaI
+
+Se utiliza el LED en la placa (normalmente conectado al pin 13 en muchos modelos, aunque en el Leonardo puede variar) para enviar la señal con tiempos establecidos.
+
+Materiales utilizados
+
+Arduino Leonardo R3
+
+Cable USB para programar y alimentar el Arduino
+
+(Opcional) Protoboard, cables, si deseas extender el circuito a un LED externo
+
+Computadora con el IDE de Arduino instalado
+
+Funcionamiento de la señal SOS (Código Morse)
+
+La señal “SOS” en código Morse consiste en:
+
+‘S’ → · · · (tres pulsos cortos)
+
+‘O’ → — — — (tres pulsos largos)
+
+‘S’ → · · · (tres pulsos cortos)
+
+Donde:
+
+Pulsos cortos (·) tienen duración unit (por ejemplo, 1 unidad de tiempo)
+
+Pulsos largos (—) tienen duración 3 × unit
+
+Espacios entre pulsos dentro de una letra: unit
+
+Espacios entre letras: 3 × unit
+
+Espacio entre palabras: 7 × unit
+
+Cómo ejecutar
+
+Conecta el Arduino Leonardo R3 a tu computadora mediante el cable USB.
+
+Abre el IDE de Arduino y crea un nuevo sketch con el código de arriba (o el que hayas desarrollado).
+
+Selecciona la placa Arduino Leonardo en el menú Herramientas → Placa.
+
+Selecciona el puerto correspondiente.
+
+Compila y sube el código al Arduino.
+
+Una vez cargado, el LED integrado comenzará a parpadear enviando la señal SOS repetidamente.
+
+Observaciones y mejoras posibles
+
+Puedes usar un LED externo conectado a otro pin (por ejemplo, pin 13) si el LED integrado no es visible.
+
+Se podrían agregar botones para activar/desactivar la señal.
+
+Ajustar unit permite cambiar la velocidad del mensaje.
+
+Usar interrupciones o temporizadores puede hacer la señal más precisa, sin depender de delay().
+
+Combinar con otras salidas (placa sonora, buzzer) para emitir también sonido en código Morse.
