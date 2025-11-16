@@ -2,7 +2,7 @@ Práctica: IRQ Enmascarado con LED integrado (Arduino Leonardo R3)
 Descripción
  para poder interrumpir la secuencia que está ejecutando en el momento en que se emita la solicitud de interrupción mediante un dispositivo de entrada.
 El video de demostración muestra el funcionamiento:
-Practica SOS - https://youtu.be/3ekV9Hd9AaI
+Practica IRQ Enmascarado - https://youtu.be/EtGUkVw-vDM
 
 Se utiliza el LED en la placa (normalmente conectado al pin 13 en muchos modelos, aunque en el Leonardo puede variar) para enviar la señal con tiempos establecidos.
 
