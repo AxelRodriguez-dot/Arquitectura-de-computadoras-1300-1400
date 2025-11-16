@@ -1,0 +1,86 @@
+Práctica: IRQ Enmascarado con LED integrado (Arduino Leonardo R3)
+Descripción
+ para poder interrumpir la secuencia que está ejecutando en el momento en que se emita la solicitud de interrupción mediante un dispositivo de entrada.
+El video de demostración muestra el funcionamiento:
+Practica SOS - https://youtu.be/3ekV9Hd9AaI
+
+Se utiliza el LED en la placa (normalmente conectado al pin 13 en muchos modelos, aunque en el Leonardo puede variar) para enviar la señal con tiempos establecidos.
+
+Materiales utilizados
+
+Arduino Leonardo R3
+
+Cable USB para programar y alimentar el Arduino
+
+Computadora con el IDE de Arduino instalado
+
+Especificaciones técnicas del Arduino Leonardo R3
+Característica	Descripción
+Microcontrolador	ATmega32u4
+Voltaje de operación	5 V
+Voltaje de entrada recomendado	7 V – 12 V
+Pines digitales I/O	20 (de los cuales 7 pueden ser PWM)
+Entradas analógicas	12
+Corriente máxima por pin I/O	40 mA
+Memoria Flash	32 KB (4 KB usados por el bootloader)
+SRAM	2.5 KB
+EEPROM	1 KB
+Frecuencia de reloj	16 MHz
+Comunicación USB	Nativa (sin chip FTDI, usa el propio ATmega32u4)
+LED integrado	Pin 13
+Conexión USB	Micro-USB
+Características especiales	Puede emular teclado, ratón y otros dispositivos HID
+
+Funcionamiento general
+
+La secuencia completa sigue este orden:
+
+SOS en código Morse (… — …)
+
+Blink: encender y apagar el LED una vez
+
+SOS nuevamente
+
+Pulsos: serie de destellos rápidos finales
+
+Boton que detiene la secuencia por completo
+Cómo ejecutar la práctica
+
+
+
+Conecta el Arduino Leonardo R3 al equipo mediante el cable USB.
+
+Abre el IDE de Arduino.
+
+Copia el código anterior en un nuevo sketch.
+
+En Herramientas → Placa, selecciona Arduino Leonardo.
+
+En Herramientas → Puerto, selecciona el puerto correspondiente.
+
+Sube el código.
+
+El LED integrado (cercano al pin 13) comenzará la secuencia descrita.
+
+Explicación de la lógica
+Acción	Descripción breve	Duración aproximada
+SOS (1)	Primer mensaje Morse	4–5 segundos
+Blink	Parpadeo simple	1 segundo
+SOS (2)	Repite mensaje Morse	4–5 segundos
+Pulsos	5 destellos rápidos	1 segundo
+Stop Interrumpe la secuencia que se esta ejecutando por completo
+Posibles mejoras
+
+Agregar buzzer para emitir el SOS también en sonido.
+
+Controlar la secuencia mediante un botón.
+
+Mostrar el estado actual (SOS, blink, pulsos, pause) en un monitor serial.
+
+Permitir ajustar la velocidad (unit) con un potenciómetro.
+
+Autor y créditos
+
+Autor: Axel Rodríguez y Damian Alexander
+Placa utilizada: Arduino Leonardo R3
+Una vez cargado, el LED integrado comenzará a parpadear enviando la señal SOS, Blink y pulse repetidamente con un Stop para detener la secuencia.
