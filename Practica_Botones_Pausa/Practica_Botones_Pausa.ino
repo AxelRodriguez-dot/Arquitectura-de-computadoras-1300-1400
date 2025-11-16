@@ -9,7 +9,7 @@ int brillo = 0;
 int buttonSOS = 8;
 int buttonBlink = 9;
 int buttonPulse = 10;
-int buttonStop = 11;
+int buttonStop = 11;  
 int buttonPause = 12;
 
 int currentMode = 0;
@@ -31,6 +31,26 @@ void setup() {
   pinMode(buttonPause, INPUT_PULLUP);
 }
 
+void safeDelay(int t) {
+  for (int i = 0; i < t; i += 10) {
+
+    checkButtons();
+
+    if (currentMode == 0) return;
+
+    if (paused) {
+      while (paused) {
+        checkButtons();
+        if (currentMode == 0) return;
+        delay(50);
+      }
+    }
+
+    delay(10);
+  }
+}
+
+
 void checkButtons() {
 
   if (digitalRead(buttonStop) == LOW) {
@@ -41,78 +61,49 @@ void checkButtons() {
     pulseStep = 0;
     pulseDir = 1;
     digitalWrite(ledPin, LOW);
+    return;
   }
 
+
   if (digitalRead(buttonPause) == LOW) {
-    if (!paused) {
-      paused = true;
-      pausedMode = currentMode;
-    } else {
-      paused = false;
-      currentMode = pausedMode;
-    }
+    paused = !paused;
+    if (paused) pausedMode = currentMode;
     delay(250);
   }
 
   if (digitalRead(buttonSOS) == LOW) {
-    if (currentMode == 1) {
-      sosStep = 0;
-    } else {
-      currentMode = 1;
-      sosStep = 0;
-      blinkStep = 0;
-      pulseStep = 0;
-      pulseDir = 1;
-    }
+    currentMode = 1;
+    sosStep = 0;
+    blinkStep = 0;
+    pulseStep = 0;
+    pulseDir = 1;
     delay(200);
   }
 
+  
   if (digitalRead(buttonBlink) == LOW) {
-    if (currentMode == 2) {
-      blinkStep = 0;
-    } else {
-      currentMode = 2;
-      sosStep = 0;
-      blinkStep = 0;
-      pulseStep = 0;
-      pulseDir = 1;
-    }
+    currentMode = 2;
+    blinkStep = 0;
     delay(200);
   }
+
 
   if (digitalRead(buttonPulse) == LOW) {
-    if (currentMode == 3) {
-      pulseStep = 0;
-      pulseDir = 1;
-    } else {
-      currentMode = 3;
-      sosStep = 0;
-      blinkStep = 0;
-      pulseStep = 0;
-      pulseDir = 1;
-    }
+    currentMode = 3;
+    pulseStep = 0;
+    pulseDir = 1;
     delay(200);
   }
 }
 
-void safeDelay(int t) {
-  for (int i = 0; i < t; i += 10) {
-    checkButtons();
-
-    if (paused && currentMode == pausedMode) return;
-    if (currentMode == 0) return;
-
-    delay(10);
-  }
-}
-
+// ---------------------------------------------------
 void loop() {
 
   checkButtons();
   if (currentMode == 0) return;
-  if (paused && currentMode == pausedMode) return;
+  if (paused) return;
 
-  switch(currentMode) {
+  switch (currentMode) {
 
     case 1:
       switch(sosStep) {
@@ -127,16 +118,23 @@ void loop() {
       }
       break;
 
+   
     case 2:
-      if (blinkStep % 2 == 0) digitalWrite(ledPin, HIGH);
-      else digitalWrite(ledPin, LOW);
-      safeDelay(300);
-      blinkStep++;
+      if (blinkStep < 14) {  
+        if (blinkStep % 2 == 0) digitalWrite(ledPin, HIGH);
+        else digitalWrite(ledPin, LOW);
+
+        safeDelay(300);
+        blinkStep++;
+
+      } else {
+        digitalWrite(ledPin, LOW);
+        currentMode = 0;
+      }
       break;
 
-    case 3: 
+    case 3:
       analogWrite(ledPin, pulseStep);
-
       pulseStep += pulseDir;
 
       if (pulseStep >= 255) pulseDir = -1;
