@@ -1,6 +1,6 @@
-Práctica: IRQ Enmascarado con LED integrado (Arduino Leonardo R3)
+Práctica: IRQ Enmascarado + Memoria con LED integrado (Arduino Leonardo R3)
 Descripción
- para poder interrumpir la secuencia que está ejecutando en el momento en que se emita la solicitud de interrupción mediante un dispositivo de entrada.
+Interrumpir la secuencia que se esta ejecutando pero que quede guardada en memoria donde se interrumpio para volver a ejecutarla
 El video de demostración muestra el funcionamiento:
 Practica SOS - https://youtu.be/3ekV9Hd9AaI
 
@@ -43,10 +43,9 @@ SOS nuevamente
 
 Pulsos: serie de destellos rápidos finales
 
-Esta secuencia se repite continuamente después de una pausa.
+Pause para que la secuencia se detenga y se guarde en memoria en el momento que se quedo para que se vuelva a ejecutar
 Cómo ejecutar la práctica
 
-Boton de pausa que al momento que se este ejecutando SOS, Blink o Pulse este detenga la secuencia
 
 Conecta el Arduino Leonardo R3 al equipo mediante el cable USB.
 
@@ -68,7 +67,7 @@ SOS (1)	Primer mensaje Morse	4–5 segundos
 Blink	Parpadeo simple	1 segundo
 SOS (2)	Repite mensaje Morse	4–5 segundos
 Pulsos	5 destellos rápidos	1 segundo
-Pausa	Interrumpe la secuencia que se esta ejecutando
+Pausa	Interrumpe la secuencia que se esta ejecutando y se guarda en memoria para volver a ejecutarla si se vuelve a presionar el boton
 Posibles mejoras
 
 Agregar buzzer para emitir el SOS también en sonido.
@@ -83,4 +82,4 @@ Autor y créditos
 
 Autor: Axel Rodríguez y Damian Alexander
 Placa utilizada: Arduino Leonardo R3
-Una vez cargado, el LED integrado comenzará a parpadear enviando la señal SOS, Blink y pulse repetidamente con interrupcion de la secuencia en ejecucion.
+Una vez cargado, el LED integrado comenzará a parpadear enviando la señal SOS, Blink y pulse repetidamente con interrupcion de la secuencia en ejecucion para guardarla en memoria.
