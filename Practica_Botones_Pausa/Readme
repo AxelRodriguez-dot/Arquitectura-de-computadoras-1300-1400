@@ -2,7 +2,7 @@ Práctica: IRQ Enmascarado + Memoria con LED integrado (Arduino Leonardo R3)
 Descripción
 Interrumpir la secuencia que se esta ejecutando pero que quede guardada en memoria donde se interrumpio para volver a ejecutarla
 El video de demostración muestra el funcionamiento:
-Practica SOS - https://youtu.be/3ekV9Hd9AaI
+Practica IRQ_Emascarado + Memoria - https://youtu.be/kgRKJJfoCQk
 
 Se utiliza el LED en la placa (normalmente conectado al pin 13 en muchos modelos, aunque en el Leonardo puede variar) para enviar la señal con tiempos establecidos.
 
