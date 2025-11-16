@@ -2,7 +2,7 @@ Práctica: Secuencia selectiva(Arduino Leonardo R3)
 Descripción
 Cuando se pulsa un boton de una secuencia y enseguida se pulsa otro que ejecuta la nueva secuencia entonces interrumpe la anterior y ejecuta la que se pulso despues
 El video de demostración muestra el funcionamiento:
-Practica SOS - https://youtu.be/3ekV9Hd9AaI
+Practica Secuencias Selectivas- https://youtu.be/mu4W0OUo4OQ?si=RbAvwMaWknUCTf9p
 
 Se utiliza el LED en la placa (normalmente conectado al pin 13 en muchos modelos, aunque en el Leonardo puede variar) para enviar la señal con tiempos establecidos.
 
