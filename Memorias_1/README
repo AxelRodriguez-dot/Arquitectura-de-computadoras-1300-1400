@@ -1,0 +1,68 @@
+Descripción
+
+A la placa de desarrollo genere el codigo necesario para generar una memoria lineal de 6 espacios, en la cual,
+aleatoriamente se almacenara un dato binario 1, para que el usuario intente encontrar en que espacio de memoria
+se ha almacenado, emulando el juego "batalla naval"
+
+El resultado se muestra en el siguiente video de demostración:
+https://youtube.com/shorts/nfoBzCrBwnw?feature=share
+Materiales utilizados
+
+Arduino Leonardo R3
+
+Cable USB para alimentación y programación
+
+6 LED externo con resistencia de 220 Ω si se desea visualizar con mayor brillo
+
+Computadora con el IDE de Arduino instalado
+
+Especificaciones técnicas del Arduino Leonardo R3
+Característica	Descripción
+Microcontrolador	ATmega32u4
+Voltaje de operación	5 V
+Voltaje de entrada recomendado	7 V – 12 V
+Pines digitales I/O	20 (de los cuales 7 pueden ser PWM)
+Entradas analógicas	12
+Corriente máxima por pin I/O	40 mA
+Memoria Flash	32 KB (4 KB usados por el bootloader)
+SRAM	2.5 KB
+EEPROM	1 KB
+Frecuencia de reloj	16 MHz
+Comunicación USB	Nativa (sin chip FTDI, usa el propio ATmega32u4)
+LED integrado	Pin 13
+Conexión USB	Micro-USB
+Características especiales	Puede emular teclado, ratón y otros dispositivos HID
+
+Funcionamiento general
+
+Se genera una memoria lineal de 6 espacios y solo una tendra el valor binario 1, para que el usuario lo intentara encontrar
+Cómo ejecutar la práctica
+
+Conecta el Arduino Leonardo R3 al equipo mediante el cable USB.
+
+Abre el IDE de Arduino.
+
+Copia el código anterior en un nuevo sketch.
+
+En Herramientas → Placa, selecciona Arduino Leonardo.
+
+En Herramientas → Puerto, selecciona el puerto correspondiente.
+
+Sube el código.
+
+
+
+Explicación de la lógica
+el valor binario 1 se encuentra oculto en la memoria lineal de 6 espacios y al apretar el boton tienes 3 oportunidades para encontrar el valor 
+
+
+
+Al encontrar el valor 3 veces se gana el juego y si pierdes 3 veces te mostrara una secuencia si pierdes, igual en la de vicotira.
+
+Mostrara una secuencia cuando ganas y otra cuando pierdes.
+
+
+Autor y créditos
+
+Autor: Axel Rodríguez y Damian Alexander
+Placa utilizada: Arduino Leonardo R3
